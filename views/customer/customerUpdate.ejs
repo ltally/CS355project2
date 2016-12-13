@@ -1,0 +1,26 @@
+<%- include("../includes/header.ejs", {title:"Add New Customer"}); %>
+<h1>Update user <%= result[0].fname + " " + result[0].lname %>'s customer information </h1>
+<form action="/customer/update" method="get">
+    <input type="hidden" id="customer_id" name="customer_id" value="<%= result[0].customer_id %>">
+    First Name:
+    <br />
+    <input id="fname" name="fname" type="text" value="<%= result[0].fname%>"/>
+    <br />
+    <br />
+    Last Name:
+    <br />
+    <input id="lname" name="lname" type="text" value="<%= result[0].lname%>"/>
+    <br />
+    <br />
+    Email:
+    <br />
+    <input id="email" name="email" type="text" value="<%= result[0].email %>"/>
+    <br />
+    <br />
+    Are you an Ambassador for us?:
+    <br />
+    <input id ="ifambassador" name="ifambassador" type="number" value="<%= result[0].ifambassador %>"/>
+    <br />
+    <input type="submit" />
+</form>
+<%- include("../includes/footer.ejs"); %>

@@ -1,0 +1,35 @@
+<%- include("../includes/header.ejs", {title:"Add New ambassador"}); %>
+<h1>Update User <%= result[0].fname + " " + result[0].lname %>'s ambassador information </h1>
+<form action="/ambassador/update" method="get">
+    <input type="hidden" id="coupon_code" name="coupon_code" value="<%= result[0].coupon_code %>">
+    Instagram Name:
+    <br />
+    <input id="instagram_name" name="instagram_name" type="text" value="<%= result[0].instagram_name%>"/>
+    <br />
+    <br />
+    First Name:
+    <br />
+    <input id="fname" name="fname" type="text" value="<%= result[0].fname%>"/>
+    <br />
+    <br />
+    Last Name:
+    <br />
+    <input id="lname" name="lname" type="text" value="<%= result[0].lname%>"/>
+    <br />
+    <br />
+    Email:
+    <br />
+    <input id="email" name="email" type="text" value="<%= result[0].email %>"/>
+    <br />
+    <br />
+    City:
+    <br />
+    <input id ="city" name="city" type="text" value="<%= result[0].city %>"/>
+    <br />
+    <br />
+    State:
+    <br />
+    <input id ="state" name="state" type="text" value="<%= result[0].state %>"/>
+    <input type="submit" />
+</form>
+<%- include("../includes/footer.ejs"); %>

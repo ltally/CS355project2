@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Ambassador</title>
+</head>
+<body>
+<h1>Ambassador</h1>
+<a href="/ambassador/add">Add New Ambassador</a> <br />
+
+<br />
+
+<table border="1">
+    <tr><th>Name</th><th>Action</th></tr>
+    <% for(var i=0; result.length > i; i++ ) { %>
+    <tr>
+        <td><a href="/ambassador/?coupon_code=<%= result[i].coupon_code %>"><%= result[i].fname%> <%= result[i].lname %></a></td>
+        <td>
+            <button onclick="event.preventDefault();window.location.href='/ambassador/edit2/?coupon_code=<%= result[i].coupon_code %>'">Edit</button>
+            <form action="/ambassador/delete/" style="display: inline">
+                <input type="hidden" name="coupon_code" id="coupon_code" value="<%= result[i].coupon_code %>" />
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+    <% } %>
+</table>
+</body>
+
+</html>

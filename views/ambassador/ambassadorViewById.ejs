@@ -1,0 +1,10 @@
+<%- include("../includes/header.ejs", {title:"Account - " + result[0].first_name}); %>
+<h1>Ambassadors</h1>
+<ul>
+    <li>Coupon Code: <%= result[0].coupon_code %></li>
+    <li>Email: <%= result[0].email %></li>
+    <li>Account Name: <%= result[0].fname %> <%= result[0].lname %></li>
+</ul>
+</body>
+
+</html>
